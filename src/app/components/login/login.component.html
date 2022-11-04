@@ -1,0 +1,50 @@
+<!-- <div class="form-login">
+ <div class="login">
+<h1>LOGIN</h1>
+ </div>
+ <div class="main-input">
+<div class="username-input">
+    <h5>
+    *Username
+    </h5>
+<input type="text">
+</div>
+<div class="password-input"> 
+    <h5>
+        *Password
+        </h5>
+<input type="text">
+</div>
+</div>
+
+</div> -->
+<!-- <form action="/action_page.php" method="post">
+    <div class="container">
+      <div>
+        <h3 class="login_container"><b style="position: relative;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Login</b></h3>
+        <div style="position: relative;">
+        </div>
+        <p></p>
+        <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Access to our dashboard</p>
+      </div><label for="uname"><span>Email</span></label><input type="text" placeholder="Enter Username" name="uname" required=""><label for="psw"><span>Password</span><span class="psw">Forgot password?</span></label><input type="password" placeholder="Enter Password" name="psw" required=""><button type="submit">Login</button>
+      <div class="register_user">Don't Have an account yet? <span class="register" routerLink="/signup"> SignUp </span></div>
+    </div>
+  </form> -->
+
+  <!-- <form #loginForm="ngForm" (ngSubmit)="userLogin(loginForm.value)">
+    <input type="text" ngModel placeholder="enter your name " name="username">
+    <br/><br/>
+    <input type="password" ngModel placeholder="enter password" name="password" >
+<br/><br/>
+<button >Login</button>
+  </form> -->
+  
+  <form [formGroup]="loginForm" (ngSubmit)="userLogin()">
+    <input type="text" ngModel placeholder="enter your username " formControlName="user" name="username"><br>
+    <span class="error" style="color: red;" *ngIf="user && user.invalid && user.touched">Please check your username</span>
+    <br/><br/>
+    <input type="password" ngModel placeholder="enter password" formControlName="password" name="password" ><br/>
+    <span class="error" style="color: red;" *ngIf="password && password.invalid && password.touched">Please check your Password</span>
+<br/><br/>
+<button >Login</button>
+  </form>
